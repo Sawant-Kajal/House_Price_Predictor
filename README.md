@@ -3,6 +3,7 @@
 This repository contains a **Flask-based web application** for predicting house prices using a **Linear Regression** model trained on the `kc_house_data.csv` dataset.
 
 ---
+![Screenshot (221)](https://github.com/user-attachments/assets/9cb5d2c4-cbcf-42e1-b705-75c895c212ca)
 
 ## Project Overview
 
@@ -14,7 +15,9 @@ This repository contains a **Flask-based web application** for predicting house 
   * Bedrooms
   * Bathrooms
   * Living area (sqft)
-  * Lot area (sqft)
+  * Floors
+  * Grade
+  * Zipcode (one-hot encoded)
 
 Users can input these features through a web form, and the app returns a predicted house price.
 
@@ -24,11 +27,10 @@ Users can input these features through a web form, and the app returns a predict
 
 ```
 ├── app.py                  # Main Flask application
-├── house_price_model.pkl   # Trained machine learning model
 ├── templates/
 │   └── index.html          # Frontend HTML form
 ├── kc_house_data.csv       # Dataset used for training
-├── train_model.py          # Script to train and save the model
+├── model.py                # Script to train and save the model
 ├── requirements.txt        # Python dependencies
 └── README.md               # Project documentation
 ```
@@ -40,7 +42,7 @@ Users can input these features through a web form, and the app returns a predict
 ### 1Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/house-price-predictor-flask.git
+git clone https://github.com/Sawant-Kajal/house-price-predictor.git
 cd house-price-predictor-flask
 ```
 
@@ -70,10 +72,12 @@ Open your browser and go to [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 
 Enter the following details in the form:
 
-* Number of bedrooms
-* Number of bathrooms
-* Living area (in sqft)
-* Lot area (in sqft)
+* Bedrooms
+* Bathrooms
+* Living area (sqft)
+* Floors
+* Grade
+* Zipcode (one-hot encoded)
 
 Click **Predict** to get the estimated house price.
 
