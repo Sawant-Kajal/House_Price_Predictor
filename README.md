@@ -15,7 +15,9 @@ This repository contains a **Flask-based web application** for predicting house 
   * Bedrooms
   * Bathrooms
   * Living area (sqft)
-  * Lot area (sqft)
+  * Floors
+  * Grade
+  * Zipcode (one-hot encoded)
 
 Users can input these features through a web form, and the app returns a predicted house price.
 
