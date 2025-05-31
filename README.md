@@ -24,11 +24,10 @@ Users can input these features through a web form, and the app returns a predict
 
 ```
 ├── app.py                  # Main Flask application
-├── house_price_model.pkl   # Trained machine learning model
 ├── templates/
 │   └── index.html          # Frontend HTML form
 ├── kc_house_data.csv       # Dataset used for training
-├── train_model.py          # Script to train and save the model
+├── model.py                # Script to train and save the model
 ├── requirements.txt        # Python dependencies
 └── README.md               # Project documentation
 ```
@@ -40,7 +39,7 @@ Users can input these features through a web form, and the app returns a predict
 ### 1Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/house-price-predictor-flask.git
+git clone https://github.com/Sawant-Kajal/house-price-predictor-flask.git
 cd house-price-predictor-flask
 ```
 
