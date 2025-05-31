@@ -39,7 +39,7 @@ Users can input these features through a web form, and the app returns a predict
 ### 1Clone the Repository
 
 ```bash
-git clone https://github.com/Sawant-Kajal/house-price-predictor-flask.git
+git clone https://github.com/Sawant-Kajal/house-price-prediction.git
 cd house-price-predictor-flask
 ```
 
