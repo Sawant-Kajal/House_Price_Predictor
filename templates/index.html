@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background-color: #f7f7f7;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #ccc;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #28a745;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+
+            form {
+                padding: 15px;
+                max-width: 100%;
+                box-shadow: none;
+            }
+
+            input[type="number"],
+            input[type="submit"] {
+                padding: 12px;
+                font-size: 16px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .result {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>House Price Prediction</h1>
+
+    <form action="/predict" method="post">
+        <label for="bedrooms">Bedrooms:</label>
+        <input type="number" id="bedrooms" name="bedrooms" step="1" required placeholder="Enter number of bedrooms">
+
+        <label for="bathrooms">Bathrooms:</label>
+        <input type="number" id="bathrooms" name="bathrooms" step="0.5" required placeholder="Enter number of bathrooms">
+
+        <label for="sqft_living">Living Area (sqft):</label>
+        <input type="number" id="sqft_living" name="sqft_living" step="1" required placeholder="Enter living area">
+
+        <label for="floors">Floors:</label>
+        <input type="number" id="floors" name="floors" step="0.5" required placeholder="Enter number of floors">
+
+        <label for="grade">Grade (1-13):</label>
+        <input type="number" id="grade" name="grade" step="1" min="1" max="13" required placeholder="Enter grade">
+
+        <label for="zipcode">Zipcode:</label>
+        <input type="number" id="zipcode" name="zipcode" required placeholder="Enter zipcode">
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction_text %}
+    <div class="result">
+        <p>{{ prediction_text }}</p>
+    </div>
+    {% endif %}
+
+</body>
+</html>
