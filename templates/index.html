@@ -25,7 +25,8 @@
             margin: auto;
         }
 
-        input[type="number"] {
+        input[type="number"],
+        input[type="text"] {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -104,7 +105,12 @@
         <input type="number" id="grade" name="grade" step="1" min="1" max="13" required placeholder="Enter grade">
 
         <label for="zipcode">Zipcode:</label>
-        <input type="number" id="zipcode" name="zipcode" required placeholder="Enter zipcode">
+        <input list="zipcode-list" type="text" id="zipcode" name="zipcode" required placeholder="Enter or select zipcode">
+        <datalist id="zipcode-list">
+            {% for zip in zipcodes %}
+                <option value="{{ zip }}">
+            {% endfor %}
+        </datalist>
 
         <input type="submit" value="Predict">
     </form>
@@ -112,6 +118,7 @@
     {% if prediction_text %}
     <div class="result">
         <p>{{ prediction_text }}</p>
+        <p>{{ actual_price_text }}</p>
     </div>
     {% endif %}
 
