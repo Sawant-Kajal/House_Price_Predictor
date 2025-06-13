@@ -9,6 +9,9 @@ import joblib                                      # For saving/loading ML model
 # Load the dataset
 df = pd.read_csv("kc_house_data.csv") 
 
+# Extract unique zipcodes
+zipcodes = df['zipcode'].astype(str).unique().tolist()  # Ensure they are strings
+
 # Select features (inputs) and target (output)
 features = ['bedrooms', 'bathrooms', 'sqft_living', 'floors', 'grade', 'zipcode']
 X = df[features]     
@@ -44,5 +47,5 @@ print(f"Actual Price: ${y_test.iloc[0]:,.2f}")
 print(f"Predicted Price: ${model.predict(X_test.iloc[[0]])[0]:,.2f}")
 
 # Save the trained model AND the column names to a file
-joblib.dump((model, X.columns), 'house_price_model.pkl')
+joblib.dump((model, X.columns, zipcodes), 'house_price_model.pkl')
 print("Model saved successfully!!!")
