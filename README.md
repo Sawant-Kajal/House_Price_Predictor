@@ -3,7 +3,7 @@
 This repository contains a **Flask-based web application** for predicting house prices using a **Linear Regression** model trained on the `kc_house_data.csv` dataset.
 
 ---
-![Screenshot (221)](https://github.com/user-attachments/assets/9cb5d2c4-cbcf-42e1-b705-75c895c212ca)
+![Screenshot (222)](https://github.com/user-attachments/assets/a0703a11-9a34-4245-87b6-447522f83614)
 
 ## Project Overview
 
@@ -115,3 +115,34 @@ pip install -r requirements.txt
 ```
 ---
 
+---
+
+## 🔧 Suggestions for Model Improvement
+
+Although the current model uses **Linear Regression** for simplicity and explainability, the performance can be improved by:
+
+### 📈 Try Advanced Models
+- **Random Forest Regressor**
+- **Gradient Boosting Regressor (e.g., XGBoost)**
+- **LightGBM**
+
+These models can capture non-linear patterns and interactions better than linear regression.
+
+### 🧠 Include More Features from the Dataset
+- `condition`
+- `waterfront`
+- `year_built`
+- `view`
+- `sqft_basement`
+
+Adding these features can provide the model with more predictive power.
+
+### ⚙️ Hyperparameter Tuning
+- Use **Grid Search** or **Random Search** to optimize model parameters.
+
+### 🔄 Feature Scaling or Transformation
+- Apply scaling (like StandardScaler) if using models sensitive to feature scale (e.g., SVM, KNN).
+
+> These improvements can help the model generalize better and increase prediction accuracy.
+
+---
